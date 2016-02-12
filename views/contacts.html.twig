@@ -7,13 +7,15 @@
 </head>
 
 <body>
-    <div class='container'>
-        <div class='jumbotron'>
+    <div class='jumbotron'>
+        <div class="container">
             <h1>Address Book</h1>
             <p>Enter contact, view all your contacts, delete all your contacts</p>
+        </div>
     </div>
 
 <!-- Row: 1 -->
+    <div class='container'>
     <div class='row addressRow'>
         <div class='col-sm-6'>
             <form action='/contact' method='post'>
@@ -65,11 +67,11 @@
     <div class="row">
 
     <!-- Display New Contact -->
-        <div class="col-sm-12 new_contact">
-            {% if newContact is not empty %}
-            <h3>Your new contact</h3>
+        {% if newContact is not empty %}
+        <h3>Your new contact:</h3>
+        <div class="col-sm-6 new_contact">
             <ul>
-                <li class="name"><strong>Name: {{ newContact.getName }} </strong></li>
+                <li class="name"><strong>{{ newContact.getName }} </strong></li>
                 <li><strong>Phone: </strong> {{ newContact.getPhone }}</li>
                 <li><strong>Street: </strong> {{ newContact.getStreet }}</li>
                 <li><strong>City: </strong> {{ newContact.getCity }}</li>
@@ -77,28 +79,31 @@
                 <li><strong>Zip: </strong> {{ newContact.getZip }}</li>
             </ul>
             <hr>
-            {% endif %}
+
         </div>
+        {% endif %}
+    </div>  <!-- /row -->
 
     <!-- Display All Contacts -->
-        <div class="col-sm-12">
-            {% if contacts is not empty %}
-            <h3>All of your contacts</h3>
-                <ul>
-                    {% for contact in contacts %}
-                    {% if contact != newContact %}
-                    <li class="name"><strong>Name: {{ contact.getName }} </strong></li>
-                    <li><strong>Phone: </strong> {{ contact.getPhone }}</li>
-                    <li><strong>Street: </strong> {{ contact.getStreet }}</li>
-                    <li><strong>City: </strong> {{ contact.getCity }}</li>
-                    <li><strong>State: </strong> {{ contact.getState }}</li>
-                    <li><strong>Zip: </strong> {{ contact.getZip }}</li>
-                    {% endif %}
-                    {% endfor %}
-                </ul>
-            {% endif %}
-            <hr>
+    <div class="row">
+    {% if contacts is not empty %}
+        <h3>All of your contacts:</h3>
+        {% for contact in contacts %}
+            {% if contact != newContact %}
+        <div class="col-sm-6 contactBox">
+                        <ul>
+                            <li class="name"><strong>{{ contact.getName }} </strong></li>
+                            <li><strong>Phone: </strong> {{ contact.getPhone }}</li>
+                            <li><strong>Street: </strong> {{ contact.getStreet }}</li>
+                            <li><strong>City: </strong> {{ contact.getCity }}</li>
+                            <li><strong>State: </strong> {{ contact.getState }}</li>
+                            <li><strong>Zip: </strong> {{ contact.getZip }}</li>
+                        </ul>
+                        <hr>
         </div>
+        {% endif %}
+    {% endfor %}        
+    {% endif %}
 
     </div>   <!-- /ROW -->
 
