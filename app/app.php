@@ -24,7 +24,7 @@
         $contacts = new Contact($_POST['name'], $_POST['phone'], $_POST['street'], $_POST['city'], $_POST['state'], $_POST['zip']);
         $contacts->save();
 
-        return $app['twig']->render('contacts.html.twig', array('contacts' => Contact::getAll()));
+        return $app['twig']->render('contacts.html.twig', array('contacts' => Contact::getAll(), 'newContact' => $contacts));
     });
 
 

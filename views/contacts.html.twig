@@ -14,7 +14,7 @@
     </div>
 
 <!-- Row: 1 -->
-    <div class='row'>
+    <div class='row addressRow'>
         <div class='col-sm-6'>
             <form action='/contact' method='post'>
                 <h2>Enter your contact</h2>
@@ -58,19 +58,35 @@
 
 
 
-<!-- SEAR BY PRICE =================== -->
+<!-- SEARCH BY PRICE =================== -->
 
 
-<!-- SEAR BY Make/Model -->
+<!-- SEARCH BY Make/Model -->
 
 
 <!-- RESULTS ============================================== -->
+    <div class="row">
 
-<!-- Display cars already created -->
+<!-- Display New Contact -->
+        <div class="col-sm-12">
+            {% if newContact is not empty %}
+            <h3>Your new contact</h3>
+            <ul>
+                <li>{{ newContact.getName }}</li>
+                <li>{{ newContact.getPhone }}</li>
+                <li>{{ newContact.getStreet }}</li>
+                <li>{{ newContact.getCity }}</li>
+                <li>{{ newContact.getState }}</li>
+                <li>{{ newContact.getZip }}</li>
+            </ul>
+            <hr>
+            {% endif %}
+        </div>
+
+<!-- Display All Contacts -->
 
 
-<!-- Display cars Matching Form Price Input -->
-
+    </div>   <!-- /ROW -->
 
 
 
