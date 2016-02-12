@@ -30,13 +30,13 @@
                 </div>
 
                 <div class='form-group'>
-                    <label for='city'>City:</label>
-                    <input type='text' name='city' class="form-control" id='city'>
+                    <label for='street'>Street:</label>
+                    <input type='text' name='street' class="form-control" id='street'>
                 </div>
 
                 <div class='form-group'>
-                    <label for='street'>Street:</label>
-                    <input type='text' name='street' class="form-control" id='street'>
+                    <label for='city'>City:</label>
+                    <input type='text' name='city' class="form-control" id='city'>
                 </div>
 
                 <div class='form-group'>
@@ -68,16 +68,16 @@
     <div class="row">
 
 <!-- Display New Contact -->
-        <div class="col-sm-12">
+        <div class="col-sm-6 new_contact">
             {% if newContact is not empty %}
             <h3>Your new contact</h3>
             <ul>
-                <li>{{ newContact.getName }}</li>
-                <li>{{ newContact.getPhone }}</li>
-                <li>{{ newContact.getStreet }}</li>
-                <li>{{ newContact.getCity }}</li>
-                <li>{{ newContact.getState }}</li>
-                <li>{{ newContact.getZip }}</li>
+                <li class="name"><strong>Name: {{ newContact.getName }} </strong></li>
+                <li><strong>Phone: </strong> {{ newContact.getPhone }}</li>
+                <li><strong>Street: </strong> {{ newContact.getStreet }}</li>
+                <li><strong>City: </strong> {{ newContact.getCity }}</li>
+                <li><strong>State: </strong> {{ newContact.getState }}</li>
+                <li><strong>Zip: </strong> {{ newContact.getZip }}</li>
             </ul>
             <hr>
             {% endif %}
