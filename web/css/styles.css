@@ -21,3 +21,7 @@ li {
 .right {
     float: left;
 }
+
+.delete {
+    margin-top: 10px;
+}

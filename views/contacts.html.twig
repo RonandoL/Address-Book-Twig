@@ -51,15 +51,17 @@
 
                 <button class='btn btn-success' type='submit'>Submit Address</button>
             </form>
+
+        <!-- Delete Contacts =================== -->
+            <form action="delete_contacts" method="post" class="delete">
+                <button class="btn btn-danger" type="submit">Delete my shit!</button>
+            </form>
+
         </div>  <!-- /col-sm-6 -->
     </div>  <!-- /ROW -->
 
-
-    <!-- Delete Contacts =================== -->
-
-
-
-<!-- RESULTS ============================================== -->
+<!-- RESULTS ============================================ -->
+<!-- Row: 2 -->
     <div class="row">
 
     <!-- Display New Contact -->
@@ -85,12 +87,12 @@
                 <ul>
                     {% for contact in contacts %}
                     {% if contact != newContact %}
-                    <li class="name"><strong>Name: {{ newContact.getName }} </strong></li>
-                    <li><strong>Phone: </strong> {{ newContact.getPhone }}</li>
-                    <li><strong>Street: </strong> {{ newContact.getStreet }}</li>
-                    <li><strong>City: </strong> {{ newContact.getCity }}</li>
-                    <li><strong>State: </strong> {{ newContact.getState }}</li>
-                    <li><strong>Zip: </strong> {{ newContact.getZip }}</li>
+                    <li class="name"><strong>Name: {{ contact.getName }} </strong></li>
+                    <li><strong>Phone: </strong> {{ contact.getPhone }}</li>
+                    <li><strong>Street: </strong> {{ contact.getStreet }}</li>
+                    <li><strong>City: </strong> {{ contact.getCity }}</li>
+                    <li><strong>State: </strong> {{ contact.getState }}</li>
+                    <li><strong>Zip: </strong> {{ contact.getZip }}</li>
                     {% endif %}
                     {% endfor %}
                 </ul>
