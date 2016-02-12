@@ -3,16 +3,21 @@
     {
         private $name;
         private $phone;
-        private $address_info;
+        private $city;
+        private $state;
+        private $zip;
 
-        function __construct($contact_name, $contact_phone, $contact_address_info)
+        function __construct($contact_name, $contact_phone, $contact_city, $contact_state, $contact_zip)
         {
             $this->name = $contact_name;
             $this->phone = $contact_phone;
-            $this->address_info = $contact_address_info
+            $this->city = $contact_city;
+            $this->city = $contact_state;
+            $this->city = $contact_zip;
         }
 
     // Getters, Setters
+        // Name
         function getName()
         {
             return $this->name;
@@ -23,6 +28,7 @@
             $this->name = (string) $new_contact;
         }
 
+        //Phone
         function getPhone()
         {
             return $this->phone;
@@ -33,14 +39,26 @@
             $this->phone = (string) $new_phone;
         }
 
-        function getAddressInfo()
+        // City
+        function getCity()
         {
-            return $this->address_info;
+            return $this->city;
         }
 
-        function setAddressInfo()
+        function setCity()
         {
-            $this->address_info = (string) $new_address_info;
+            $this->City = (string) $new_city;
+        }
+
+        // State
+        function getState()
+        {
+            return $this->state;
+        }
+
+        function setState()
+        {
+            $this->state = (string) $new_state;
         }
 
     // SAVE, getAll(), deleteAll()

@@ -1,94 +1,75 @@
 <!DOCTYPE html>
 <html>
-    <head>
-        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css" integrity="sha384-1q8mTJOASx8j1Au+a5WDVnPi2lkFfwwEAa8hDDdjZlpLegxhjVME1fgjWPGmkzs7" crossorigin="anonymous">
-        <link rel="stylesheet" href="css/styles.css">
-        <title>Here are th cars!</title>
-    </head>
+<head>
+    <link rel='stylesheet' href='https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css' integrity='sha384-1q8mTJOASx8j1Au+a5WDVnPi2lkFfwwEAa8hDDdjZlpLegxhjVME1fgjWPGmkzs7' crossorigin='anonymous'>
+    <link rel='stylesheet' href='css/styles.css'>
+    <title>Address Book</title>
+</head>
 
-        <body>
-          <div class='container'>
-            <div class='jumbotron'>
-              <h1>Address Book</h1>
-              <p>Enter contact, view all your contacts, delete all your contacts</p>
-            </div>  <!-- /JUMBOTRON -->
+<body>
+    <div class='container'>
+        <div class='jumbotron'>
+            <h1>Address Book</h1>
+            <p>Enter contact, view all your contacts, delete all your contacts</p>
+    </div>
 
-        <!-- Row: 1 -->
+<!-- Row: 1 -->
+    <div class='row'>
+        <div class='col-sm-6'>
+            <form action='/contact' method='post'>
+                <h2>Enter your contact</h2>
+
+                <div class='form-group'>
+                    <label for='name'>Name:</label>
+                    <input type='text' name='name' class="form-control" id='name'>
+                </div>
+
+                <div class='form-group'>
+                    <label for='phone'>Phone:</label>
+                    <input type='text' name='phone' class="form-control" id='phone'>
+                </div>
+
+                <div class='form-group'>
+                    <label for='city'>City:</label>
+                    <input type='text' name='city' class="form-control" id='city'>
+                </div>
+
+                <div class='form-group'>
+                    <label for='street'>Street:</label>
+                    <input type='text' name='street' class="form-control" id='street'>
+                </div>
+
+                <div class='form-group'>
+                    <label for='state'>State:</label>
+                    <input type='text' name='state' class="form-control" id='state'>
+                </div>
+
+                <div class='form-group'>
+                    <label for='zip'>Zip:</label>
+                    <input type='text' name='zip' class="form-control" id='zip'>
+                </div>
+
+                <button class='btn btn-success' type='submit'>Submit Address</button>
+            </form>
+        </div>  <!-- /col-sm-6 -->
+    </div>  <!-- /ROW -->
 
 
 
-                      <button class='btn btn-warning' type='submit'>Add your car!</button>
-                </form>
-
-                <!-- DELETE CARS -->
-                <form action='/delete_cars' method='post'>
-                    <button class='btn btn-danger' type='submit'>Clear</button>
-                </form>
-
-            </div>  <!-- /col-sm-6 -->
-
-    <!-- SEAR BY PRICE =================== -->
-            <div class="col-sm-6">
-                <h2>Search for cars based on price</h2>
-                <form action='/car_matches'>
-
-                    <button class='btn btn-info' type='submit' name='button'>Gimme some sugar baby</button>
-                </form>
-            </div>
-
-    <!-- SEAR BY Make/Model -->
-            <div class="col-sm-6">
-                <h2>Search for cars based on Name</h2>
-                <form action='/make_model_matches'>
 
 
-                    <button class='btn btn-success' type='submit' name='button'>Search by Make</button>
-                </form>
-            </div>
+<!-- SEAR BY PRICE =================== -->
 
-          </div>  <!-- /Row -->
 
-            <div class="row">
+<!-- SEAR BY Make/Model -->
+
 
 <!-- RESULTS ============================================== -->
 
-    <!-- Display cars already created -->
-                <div class="col-sm-6">
-                    {% if newcar is not empty %}
-                    <h1>Here is your car!</h1>
-
-                    {% endif %}
-
-                    <h3>All Cars For Sale</h3>
-
-                </div>
-
-    <!-- Display cars Matching Form Price Input -->
-                <div class="col-sm-6">
-                    <h3>All Cars Based on your price limit</h3>
-
-                    {% for car in match_cars %}
-                    <div class="row">
-                        <div class='col-md-6'>
-                            <h2> {{ car.getModel }}</h2>
+<!-- Display cars already created -->
 
 
-
-                </div>
-                <div class="col-sm-6">
-                    <h3>All Cars Based on your title search</h3>
-
-                    {% for car in match_models %}
-                    <div class="row">
-                        <div class='col-md-6'>
-                            <h2> {{ car.getModel }}</h2>
-
-                    </div>
-                    {% endfor %}
-
-
-                </div>
-            </div>
+<!-- Display cars Matching Form Price Input -->
 
 
 
@@ -96,10 +77,11 @@
 
 
 
-          </div>  <!-- /Container -->
 
 
 
 
-        </body>
+
+    </div>
+</body>
 </html>
