@@ -17,3 +17,7 @@ li {
 .name {
     font-size: 1.15em;
 }
+
+.right {
+    float: left;
+}

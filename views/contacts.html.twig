@@ -55,20 +55,15 @@
     </div>  <!-- /ROW -->
 
 
+    <!-- Delete Contacts =================== -->
 
-
-
-<!-- SEARCH BY PRICE =================== -->
-
-
-<!-- SEARCH BY Make/Model -->
 
 
 <!-- RESULTS ============================================== -->
     <div class="row">
 
-<!-- Display New Contact -->
-        <div class="col-sm-6 new_contact">
+    <!-- Display New Contact -->
+        <div class="col-sm-12 new_contact">
             {% if newContact is not empty %}
             <h3>Your new contact</h3>
             <ul>
@@ -83,8 +78,25 @@
             {% endif %}
         </div>
 
-<!-- Display All Contacts -->
-
+    <!-- Display All Contacts -->
+        <div class="col-sm-12">
+            {% if contacts is not empty %}
+            <h3>All of your contacts</h3>
+                <ul>
+                    {% for contact in contacts %}
+                    {% if contact != newContact %}
+                    <li class="name"><strong>Name: {{ newContact.getName }} </strong></li>
+                    <li><strong>Phone: </strong> {{ newContact.getPhone }}</li>
+                    <li><strong>Street: </strong> {{ newContact.getStreet }}</li>
+                    <li><strong>City: </strong> {{ newContact.getCity }}</li>
+                    <li><strong>State: </strong> {{ newContact.getState }}</li>
+                    <li><strong>Zip: </strong> {{ newContact.getZip }}</li>
+                    {% endif %}
+                    {% endfor %}
+                </ul>
+            {% endif %}
+            <hr>
+        </div>
 
     </div>   <!-- /ROW -->
 

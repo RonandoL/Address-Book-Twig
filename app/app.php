@@ -20,6 +20,7 @@
         return $app['twig']->render('contacts.html.twig', array('contact' => Contact::getAll()));
     });
 
+    // Create New Contact: Display all contacts
     $app->post("/contact", function() use($app) {
         $contacts = new Contact($_POST['name'], $_POST['phone'], $_POST['street'], $_POST['city'], $_POST['state'], $_POST['zip']);
         $contacts->save();
